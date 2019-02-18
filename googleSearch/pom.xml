@@ -33,12 +33,6 @@
      <version>4.0.0</version>
      <scope>provided</scope>
     </dependency>
-    <dependency>
-    <!-- jsoup HTML parser library @ https://jsoup.org/ -->
-      <groupId>org.jsoup</groupId>
-      <artifactId>jsoup</artifactId>
-      <version>1.11.3</version>
-    </dependency>
     <!-- Shared version number properties -->
     <!-- Core utilities used by other modules.
         Define this if you use Spring Utility APIs 
@@ -209,5 +203,18 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <resources>
+        <!-- resource processsing with a different output directory
+             for logback.xml -->
+        <resource>
+            <directory>src/main/java/googleSearch/mapper</directory>
+            <includes>
+                <include>*.xml</include>
+            </includes>
+            <!-- relative to target/classes
+                 i.e. ${project.build.outputDirectory} -->
+            <targetPath>googleSearch/mapper</targetPath>
+        </resource>
+    </resources>
   </build>
 </project>
